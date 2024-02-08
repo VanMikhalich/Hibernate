@@ -1,0 +1,15 @@
+// добавление пользователя в таблицу
+Employee employee = new Employee("Ivan", "Ezhov", 19, "Java develop", 3000);
+session.save(employee);
+
+//получение пользователя с ID=3
+Employee employee1 = session.get(Employee.class, 3);
+System.out.println(employee1);
+
+//изменение данных пользователя
+Employee employee2 = session.get(Employee.class, 3);
+employee2.setSalary(5000);
+
+//удаление пользователя
+Employee employee3 = session.get(Employee.class, 3);
+session.delete(employee3);
